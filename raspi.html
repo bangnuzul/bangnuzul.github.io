@@ -1,0 +1,83 @@
+<html>
+<head>
+<script src="php_crud_api_transform.js"></script>
+</head>
+<body>
+
+<h1>RADIO ONLINE</h1>
+<p id="demo"></p>
+
+<button type="button" onclick="loadDoc()">Suara Muslim</button>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("PUT", "http://rtool.sourceforge.net/api.php/data/6", true);
+  xhttp.send("nama=raspicommand&isi=https://suaramuslim.net/");
+}
+</script>
+
+<button type="button" onclick="loadDoc2()">MQ FM</button>
+ 
+<script>
+function loadDoc2() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("PUT", "http://rtool.sourceforge.net/api.php/data/6", true);
+  xhttp.send("nama=raspicommand&isi=https://tunein.com/radio/Radio-MQFM-1027-s123926/");
+}
+</script>
+
+<button type="button" onclick="loadDoc3()">CLOSE</button>
+ 
+<script>
+function loadDoc3() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("PUT", "http://rtool.sourceforge.net/api.php/data/6", true);
+  xhttp.send("nama=raspicommand&isi=close");
+}
+</script>
+
+<button type="button" onclick="loadDoc4()">REBOOT</button>
+ 
+<script>
+function loadDocR() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("PUT", "http://rtool.sourceforge.net/api.php/data/6", true);
+  xhttp.send("nama=raspicommand&isi=https://suaramuslim.net/");
+}
+function loadDoc4() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("PUT", "http://rtool.sourceforge.net/api.php/data/6", true);
+  xhttp.send("nama=raspicommand&isi=reboot");
+  setTimeout(function () { loadDocR(); }, 10000);
+}
+</script>
+
+</body>
+</html>
+
